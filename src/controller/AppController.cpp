@@ -254,8 +254,10 @@ void AppController::tick() {
     // -- 4. 前台服务 (仅亮屏运行) -------------------------------------------------
 
     if (network.isReady()) { 
-        if (timerWeather == 0 || (now - timerWeather > CONFIG_WEATHER_INTERVAL)) {
-            checkWeather();
+        if (time(nullptr) > 1000000000) {
+            if (timerWeather == 0 || (now - timerWeather > CONFIG_WEATHER_INTERVAL)) {
+                checkWeather();
+            }
         }
     }
 
