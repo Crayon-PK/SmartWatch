@@ -83,7 +83,7 @@ void GameDino::updateObstacles() {
 
         } else {
             // --- 障碍物生成逻辑 ---
-            if (rand() % 100 < 2) {
+            if (rand() % 1000 < 2) {
                 bool canSpawn = true;
                 // 确保与前一个障碍物保持足够距离
                 for (int j = 0; j < OBSTACLE_MAX; j++) {
@@ -112,7 +112,7 @@ void GameDino::checkHighScore() {
 void GameDino::onKeyUp() {
     if (state == STATE_PLAYING) {
         if (!isJumping) {
-            dinoVy = -8.0f; // 起跳力度
+            dinoVy = -12.0f; // 起跳力度
             isJumping = true;
         }
     } else if (state == STATE_PAUSED) {

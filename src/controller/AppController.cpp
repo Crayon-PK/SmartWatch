@@ -88,6 +88,9 @@ void AppController::onKeySelect() {
     if (!processInput() || currentApp) return;
     if (!inMenuMode) {
         inMenuMode = true;
+        if (rootMenu != nullptr && !rootMenu->items.empty()) {
+            rootMenu->selectedIndex = rootMenu->items.size() / 2;
+        }
         menuCtrl.init(rootMenu);
     } else {
         menuCtrl.enter();
@@ -295,7 +298,6 @@ void AppController::tick() {
     static unsigned long lastRender = 0;
     if (now - lastRender > frameInterval) { 
         lastRender = now;
-        
         if (!currentApp) render(); // 无App时绘制系统界面
         
         toast.draw(&display);      // 绘制弹窗
