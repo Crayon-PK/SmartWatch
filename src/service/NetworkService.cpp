@@ -15,7 +15,11 @@ void NetworkService::connect(const char* ssid, const char* password) {
     }
     _wifiConnected = false;
     WiFi.begin(ssid, password);
-    configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
+    syncTime();
+}
+
+void NetworkService::syncTime() {
+    configTime(gmtOffset_sec, daylightOffset_sec, ntpServer, "pool.ntp.org", "time.windows.com");
 }
 
 void NetworkService::stop() {

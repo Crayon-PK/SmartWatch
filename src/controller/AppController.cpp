@@ -235,9 +235,20 @@ void AppController::tick() {
 
     // 检查WiFi 与 蓝牙 连接状态
     static unsigned long lastNetCheck = 0;
-    if (now - lastNetCheck > 5000) {
+    if (now - lastNetCheck > 1000) {
         AppData.isWifiConnected = network.isConnected(); 
         AppData.isBLEConnected = ble.isConnected();
+        
+        // 最高优先级任务：连上WiFi但时间未同步
+        if (AppData.isWifiConnected && (time(nullptr) < 1000000000l)) {
+            static unsigned long lastNtpSync = 0;
+            // 限制底层 NTP 请求的最小间隔为 2000ms，防止频繁重置 SNTP 进程导致失败
+            if (now - lastNtpSync > 2000) {
+                network.syncTime();
+                lastNtpSync = now;
+            }
+        }
+
         lastNetCheck = now;
     }
 

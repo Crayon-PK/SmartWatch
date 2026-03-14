@@ -47,6 +47,7 @@ public:
     void update(); // 维护连接状态
     bool isConnected();
     bool isReady(); // 连上且时间已同步
+    void syncTime(); // 同步时间，NTP
 
     // -- 异步天气 API --
     void requestWeatherUpdate(const char* key, const char* city); // 发起请求
