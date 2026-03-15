@@ -59,6 +59,10 @@ void AlarmApp::handleLongPressLoop(float dt) {
     if (!isPressed) {
         deleteProgress = 0.0f;
         pressStartTime = 0;
+        if (suppressClick) {
+            suppressClick = false;
+            return;
+        }
         return;
     }
 
@@ -94,10 +98,6 @@ void AlarmApp::handleLongPressLoop(float dt) {
             suppressClick = true;
             if (!sys->processInput()) return;
         }
-    }
-    if (suppressClick) {
-        suppressClick = false;
-        return;
     }
 }
 
@@ -190,6 +190,7 @@ void AlarmApp::onkeySelect() {
 void AlarmApp::onRun(AppController* sys) {
     this->sys = sys;
 
+    setFrameRate(60);
     loadAlarmData();
     sortAlarms();
 
