@@ -95,6 +95,10 @@ void AlarmApp::handleLongPressLoop(float dt) {
             if (!sys->processInput()) return;
         }
     }
+    if (suppressClick) {
+        suppressClick = false;
+        return;
+    }
 }
 
 // -- 按键输入函数 -------------------------------------------------------------
@@ -352,7 +356,7 @@ void AlarmApp::drawListView(int offsetX) {
             sys->display.drawLine(centerX, centerY - 4, centerX, centerY + 4);
             sys->display.drawText(centerX - 9, centerY + 16, STR_ALARM_NEW[L]);
         } else {
-            if (deleteProgress > 0.1f) {
+            if (deleteProgress > 0.2f) {
                 sys->display.drawText(centerX - 9, 28, STR_DEL[L]);
                 int barW = 6, barH = 20, barX = centerX - 3, barY = 32;
                 sys->display.drawFrame(barX, barY, barW, barH);
