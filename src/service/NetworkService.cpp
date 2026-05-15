@@ -18,16 +18,13 @@ void NetworkService::connect(const char* ssid, const char* password) {
     syncTime();
 }
 
-void NetworkService::syncTime() {
-    configTime(gmtOffset_sec, daylightOffset_sec, ntpServer, "pool.ntp.org", "time.windows.com");
-}
-
 void NetworkService::stop() {
     WiFi.disconnect(true);
     WiFi.mode(WIFI_OFF);
     _wifiConnected = false;
 }
 
+// 状态查询
 bool NetworkService::isConnected() {
     return WiFi.status() == WL_CONNECTED;
 }
@@ -36,7 +33,12 @@ bool NetworkService::isReady() {
     return isConnected() && (time(nullptr) > 1000000000l);
 }
 
-// -- 状态维护 --------------------------------------------------------------------
+// 时间同步
+void NetworkService::syncTime() {
+    configTime(gmtOffset_sec, daylightOffset_sec, ntpServer, "pool.ntp.org", "time.windows.com");
+}
+
+// -- 内部状态维护 --------------------------------------------------------------------
 
 void NetworkService::update() {
     unsigned long now = millis();

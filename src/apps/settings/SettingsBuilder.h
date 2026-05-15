@@ -1,13 +1,13 @@
 #pragma once
 
-#include "model/MenuTypes.h"
+#include "view/MenuTypes.h"
 
 class AppController;
 
 // -- 类定义 ----------------------------------------------------------------------
 class SettingsBuilder {
 public:
-    static MenuPage* build(AppController* sys);
+    static MenuPage* buildPage(AppController* sys);
 
 private:
     static void buildLanguagePage(AppController* sys, MenuPage* parent);

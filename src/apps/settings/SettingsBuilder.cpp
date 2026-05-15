@@ -23,7 +23,7 @@ String getSleepLabel(int sec, int lang) {
 
 // -- 主构建函数 ------------------------------------------------------------------
 
-MenuPage* SettingsBuilder::build(AppController* sys) {
+MenuPage* SettingsBuilder::buildPage(AppController* sys) {
     int L = AppData.systemConfig.languageIndex;
 
     MenuPage* page = sys->createPage(STR_SETTINGS[L], LAYOUT_LIST);

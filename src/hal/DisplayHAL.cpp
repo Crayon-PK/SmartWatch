@@ -2,8 +2,9 @@
 
 // -- 构造与初始化 ----------------------------------------------------------------
 
-DisplayHAL::DisplayHAL()
-    : u8g2(U8G2_R0, PIN_OLED_CS, PIN_OLED_DC, PIN_OLED_RES) {
+DisplayHAL::DisplayHAL() : u8g2(U8G2_R0, PIN_OLED_CS, PIN_OLED_DC, PIN_OLED_RES) 
+{
+
 }
 
 void DisplayHAL::begin() {

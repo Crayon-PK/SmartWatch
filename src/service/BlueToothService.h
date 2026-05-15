@@ -33,10 +33,8 @@ public:
     void begin(const char* deviceName); // 开启蓝牙
     void stop();                        // 关闭蓝牙
 
+    void setConfigCallback(ConfigCallback cb); // 注册回调函数
     bool isServiceRunning() { return _isServiceRunning; } // 蓝牙开关状态
-    // 注册回调函数
-    void setConfigCallback(ConfigCallback cb);
-
     bool isConnected();                 // 手机是否已连接
 
 private:

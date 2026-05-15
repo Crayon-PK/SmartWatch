@@ -1,11 +1,11 @@
 #pragma once
 
-#include "model/MenuTypes.h"
+#include "view/MenuTypes.h"
 
 class AppController;
 
 // -- 类定义 ----------------------------------------------------------------------
 class GamesBuilder {
 public:
-    static MenuPage* build(AppController* sys);
+    static MenuPage* buildPage(AppController* sys);
 };

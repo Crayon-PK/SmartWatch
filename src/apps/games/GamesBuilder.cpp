@@ -5,7 +5,7 @@
 
 // -- 构建函数 --------------------------------------------------------------------
 
-MenuPage* GamesBuilder::build(AppController* sys) {
+MenuPage* GamesBuilder::buildPage(AppController* sys) {
     int lang = AppData.systemConfig.languageIndex;
     
     // 创建菜单页

@@ -2,7 +2,7 @@
 
 #include <vector>
 #include <Arduino.h>
-#include "model/MenuTypes.h"
+#include "view/MenuTypes.h"
 
 // -- 类定义 ----------------------------------------------------------------------
 class MenuController {

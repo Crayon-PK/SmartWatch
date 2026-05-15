@@ -6,7 +6,7 @@
 
 // -- 构建函数 --------------------------------------------------------------------
 
-MenuPage* ToolBuilder::build(AppController* sys) {
+MenuPage* ToolBuilder::buildPage(AppController* sys) {
     int L = AppData.systemConfig.languageIndex;
 
     // 创建工具菜单页

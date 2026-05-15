@@ -18,8 +18,7 @@ struct MenuItem {
     const uint8_t* icon;            // 图标位图指针
     MenuCallback action;            // 点击触发的回调
     
-    MenuItem(String t, const uint8_t* i, MenuCallback cb) 
-        : title(t), icon(i), action(cb) {}
+    MenuItem(String t, const uint8_t* i, MenuCallback cb) : title(t), icon(i), action(cb) {}
 };
 
 // -- 菜单页面定义 ----------------------------------------------------------------
@@ -29,8 +28,7 @@ struct MenuPage {
     int selectedIndex = 0;          // 记录当前选中的索引
     MenuLayout layout;              // 页面布局样式
 
-    MenuPage(String t, MenuLayout l = LAYOUT_LIST) 
-        : title(t), layout(l) {}
+    MenuPage(String t, MenuLayout l = LAYOUT_LIST) : title(t), layout(l) {}
     
     // -- 动态操作 ----------------------------------------------------------------
     void add(String title, const uint8_t* icon, MenuCallback cb) {

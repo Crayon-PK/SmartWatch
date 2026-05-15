@@ -10,14 +10,14 @@
 #include "apps/alarm/AlarmApp.h"
 
 // -- 菜单构建 --------------------------------------------------------------------
-void MenuFactory::build(AppController* sys) {
+void MenuFactory::assemble(AppController* sys) {
     sys->destroyMenuTree();
     int lang = AppData.systemConfig.languageIndex;
 
     // 1. 构建子页面
-    MenuPage* gamePage = GamesBuilder::build(sys);
-    MenuPage* settingsPage = SettingsBuilder::build(sys);
-    MenuPage* toolsPage = ToolBuilder::build(sys);
+    MenuPage* gamePage = GamesBuilder::buildPage(sys);
+    MenuPage* settingsPage = SettingsBuilder::buildPage(sys);
+    MenuPage* toolsPage = ToolBuilder::buildPage(sys);
     
     // 2. 构建根菜单 (图标布局)
     sys->rootMenu = sys->createPage("Home", LAYOUT_ICON);

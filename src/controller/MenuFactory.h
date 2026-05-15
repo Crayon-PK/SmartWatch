@@ -5,5 +5,5 @@
 // -- 类定义 ----------------------------------------------------------------------
 class MenuFactory {
 public:
-    static void build(AppController* app);  
+    static void assemble(AppController* app);  
 };

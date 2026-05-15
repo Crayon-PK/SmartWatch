@@ -1,6 +1,6 @@
 #pragma once
 
-#include "model/AppBase.h"
+#include "apps/AppBase.h"
 #include <Arduino.h>
 #include <vector>
 

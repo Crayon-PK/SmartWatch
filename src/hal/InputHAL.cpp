@@ -2,8 +2,8 @@
 
 // -- 构造与初始化 ----------------------------------------------------------------
 
-InputHAL::InputHAL(uint8_t pin) 
-    : btn(pin, true, true), _pin(pin) {
+InputHAL::InputHAL(uint8_t pin) : btn(pin, true, true), _pin(pin) 
+{
 }
 
 void InputHAL::begin() {

@@ -3,8 +3,8 @@
 #include <vector>
 #include "AppConfig.h"
 #include "model/AppData.h"
-#include "model/MenuTypes.h"
-#include "model/AppBase.h"
+#include "view/MenuTypes.h"
+#include "apps/AppBase.h"
 #include "hal/DisplayHAL.h"
 #include "hal/InputHAL.h"
 #include "hal/ImuHAL.h"

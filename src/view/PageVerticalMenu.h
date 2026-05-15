@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Page.h"
-#include "model/MenuTypes.h"
+#include "view/MenuTypes.h"
 #include "model/AppData.h"
 #include <Arduino.h>
 

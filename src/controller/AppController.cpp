@@ -141,8 +141,7 @@ void AppController::bindSystemEvents() {
 
 // -- 生命周期 (App函数) -----------------------------------------------------------
 
-AppController::AppController() 
-    : btnSelect(PIN_BTN_SELECT), btnUp(PIN_BTN_UP), btnDown(PIN_BTN_DOWN) {}
+AppController::AppController() : btnSelect(PIN_BTN_SELECT), btnUp(PIN_BTN_UP), btnDown(PIN_BTN_DOWN) {}
 
 void AppController::begin() {
     lastActiveTime = millis();
@@ -185,7 +184,7 @@ void AppController::begin() {
     }
 
     // 2. 构建菜单树并绑定按键
-    MenuFactory::build(this);
+    MenuFactory::assemble(this);
     bindSystemEvents();
 
     // 3. 初始化计时器
@@ -198,7 +197,7 @@ void AppController::tick() {
     if (reloadPending) {
         reloadPending = false;
         destroyMenuTree();
-        MenuFactory::build(this);
+        MenuFactory::assemble(this);
         inMenuMode = true;
         menuCtrl.init(rootMenu);
         return; 
