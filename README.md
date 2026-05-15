@@ -1,5 +1,6 @@
 # SmartWatch - 基于 ESP32 的分层架构智能手表
-
+项目总结：[CSDN博客](https://blog.csdn.net/2301_80190305/article/details/161125500?spm=1001.2014.3001.5501)  
+项目演示：[B站视频链接](https://www.bilibili.com/video/BV1zfDvB4Egr/?vd_source=31a857204b1be48fb3dedea9e91da57f)  
 这是一个基于 ESP32-WROOM 的智能手表项目，采用 **分层架构** 设计。项目实现了应用管理、GUI 交互、硬件抽象等功能，具有高度的可扩展性和解耦性。
 
 ## 📺 功能特性
